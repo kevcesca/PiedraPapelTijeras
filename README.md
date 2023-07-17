@@ -19,7 +19,7 @@ Este es un juego simple de "Piedra, Papel o Tijera" implementado como una aplica
 
 ## Jugar
 
-Para poder jugar solo ingresa a la siguiente web y listo! https://piedra-papel-tijeras-ltkka2cbk-kevcesca.vercel.app
+Para poder jugar solo ingresa a la siguiente web y listo! https://piedrapapeltijeras-kevinceron.vercel.app/
 
 ## Uso
 
