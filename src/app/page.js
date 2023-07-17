@@ -51,7 +51,7 @@ export default function Home() {
 
   return (
     <main className={styles.centroColumna}>
-      <h1>Piedra, Papel o Tijera</h1>
+      <h1 className={styles.titulo}>Piedra, Papel o Tijera</h1>
 
       {/* ***Aqui va el puntaje*** */}
       <div className={styles.centroColumna}>
@@ -73,18 +73,21 @@ export default function Home() {
             <button onClick={() => empezarJuego('papel')} className={styles.imagenes}>
               <Image
                 src={papel}
+                alt="Papel"
                 priority
               />
             </button>
             <button onClick={() => empezarJuego('piedra')} className={styles.imagenes}>
               <Image
                 src={piedra}
+                alt="Piedra"
                 priority
               />
             </button>
             <button onClick={() => empezarJuego('tijeras')} className={styles.imagenes}>
               <Image
                 src={tijeras}
+                alt="Tijeras"
                 priority
               />
             </button>
@@ -100,18 +103,21 @@ export default function Home() {
             <button className={styles.imagenes}>
               <Image
                 src={papel}
+                alt="Papel"
                 priority
               />
             </button>
             <button className={styles.imagenes}>
               <Image
                 src={piedra}
+                alt="Piedra"
                 priority
               />
             </button>
             <button className={styles.imagenes}>
               <Image
                 src={tijeras}
+                alt="Tijeras"
                 priority
               />
             </button>
@@ -127,16 +133,16 @@ export default function Home() {
             <div className={styles.contenedorModal}>
               {/* Eleccion del jugador humano */}
               <div className={styles.centroColumna}>
-                {eleccionJugador === 'piedra' && <Image src={piedra} className={styles.imagenesModal} priority />}
-                {eleccionJugador === 'papel' && <Image src={papel} className={styles.imagenesModal} priority />}
-                {eleccionJugador === 'tijeras' && <Image src={tijeras} className={styles.imagenesModal} priority />}
+                {eleccionJugador === 'piedra' && <Image src={piedra} className={styles.imagenesModal} alt={eleccionJugador} priority />}
+                {eleccionJugador === 'papel' && <Image src={papel} className={styles.imagenesModal} alt={eleccionJugador} priority />}
+                {eleccionJugador === 'tijeras' && <Image src={tijeras} className={styles.imagenesModal} alt={eleccionJugador} priority />}
                 <p className={styles.texto}>{eleccionJugador}</p>
               </div>
               {/* Eleccion del jugador maquina */}
               <div className={styles.centroColumna}>
-                {eleccionBot === 'piedra' && <Image src={piedra} className={styles.imagenesModal} priority />}
-                {eleccionBot === 'papel' && <Image src={papel} className={styles.imagenesModal} priority />}
-                {eleccionBot === 'tijeras' && <Image src={tijeras} className={styles.imagenesModal} priority />}
+                {eleccionBot === 'piedra' && <Image src={piedra} className={styles.imagenesModal} alt={eleccionBot} priority />}
+                {eleccionBot === 'papel' && <Image src={papel} className={styles.imagenesModal} alt={eleccionBot}  priority />}
+                {eleccionBot === 'tijeras' && <Image src={tijeras} className={styles.imagenesModal} alt={eleccionBot}  priority />}
                 <p className={styles.texto}>{eleccionBot}</p>
               </div>
             </div>

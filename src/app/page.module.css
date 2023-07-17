@@ -26,6 +26,7 @@
   border-right: 2px;
   border-color: black;
   border-style: solid;
+  height: 90vh;
 }
 
 .derecho{
@@ -38,6 +39,7 @@
   border-left: 2px;
   border-color: black;
   border-style: solid;
+  height: 90vh;
 }
 
 .imagenes{
@@ -61,10 +63,12 @@
 
 .contenedorModal{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   flex-direction: row;
   flex-wrap: nowrap;
+  width: 80vw;
+  height: 90vh;
 }
 
 .imagenesModal{
@@ -72,4 +76,76 @@
   height: auto;
   margin-left: 1rem;
   margin-right: 1rem;
+}
+
+
+/* Media queries */
+
+/* Estilos para tabletas y dispositivos con una resolución de pantalla más pequeña */
+@media screen and (max-width: 1400px) {
+  .derecho{
+    padding-left: 4%;
+  }
+
+  .izquierdo{
+    padding-right: 4%;
+  }
+
+  .contenedorModal{
+    justify-content: space-evenly;
+    width: 90vw;
+    height: 90vh;
+    background-color: white;
+  }
+
+  .imagenesModal{
+    width: 100%;
+  }
+
+  .resultados{
+    padding: 40vh;
+    padding-left: 50vw;
+    padding-right: 50vw;
+  }
+
+}
+
+/* Estilos para dispositivos móviles y pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  .titulo{
+    font-size: 2.8rem;
+  }
+
+  .marcador{
+    font-size: 3rem;
+  }
+  
+  .texto{
+    font-size: 1rem;
+  }
+
+  .izquierdo{
+    height: 60vh;
+  }
+
+  .derecho{
+    height: 60vh;
+  }
+
+  .resultados{
+    padding-top: 40vh;
+    padding-bottom: 40vh;
+  }
+}
+
+/* Estilos para dispositivos móviles aún más pequeños, como smartphones en modo retrato */
+@media screen and (max-width: 480px) {
+  .resultados{
+    padding-top: 34vh;
+    padding-bottom: 34vh;
+  }
+
+  .contenedorModal{
+    height: 80vh;
+  }
 }
