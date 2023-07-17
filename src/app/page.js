@@ -1,17 +1,15 @@
 'use client'
 import React, { useState } from 'react';
 import Modal from "./components/Modal/Modal";
-import Image from 'next/image'
-import styles from './page.module.css'
-import { Card, Grid } from '@mui/material'
-import piedra from './punio.png'
-import tijeras from './tijeras.png'
-import papel from './manita.png'
+import Image from 'next/image';
+import styles from './page.module.css';
+import { Card, Grid } from '@mui/material';
+import piedra from './punio.png';
+import tijeras from './tijeras.png';
+import papel from './manita.png';
 import { disable } from 'colors';
 
-
 export default function Home() {
-
   const [showModal, setShowModal] = useState(false);
   const [mostrarImagenes, setMostrarImagenes] = useState(false);
 
@@ -31,7 +29,6 @@ export default function Home() {
     setMostrarImagenes(true);
 
     setTimeout(() => {
-
       setMostrarImagenes(false);
       if (eleccionJugador === eleccionBot) {
         setResultado("Empate");
@@ -46,14 +43,12 @@ export default function Home() {
         setResultado('Perdiste');
         setBotGana((victorias) => victorias + 1);
       }
-
     }, "1000");
 
     setTimeout(() => {
       setShowModal(false);
     }, "2000");
   };
-
 
   return (
     <main className={styles.centroColumna}>
@@ -71,7 +66,6 @@ export default function Home() {
       </div>
 
       <Grid container sx={{ height: "100vh", justifyContent: "center", alignItems: "center" }}>
-
         {/* ***Parte izquierda del juego (jugador)*** */}
         <Grid item xs={5} sm={5} md={5} lg={5} className={styles.izquierdo}>
           <h2 className={styles.texto}>Tú</h2>
@@ -129,11 +123,9 @@ export default function Home() {
       {/* ***Aqui va el modal para mostrar la eleccion de los jugadores y avisar quien gana*** */}
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-
-          {mostrarImagenes
+          {mostrarImagenes ? (
             //Se muestra en imagenes la seleccion de cada jugador
-            ? <div className={styles.contenedorModal}>
-
+            <div className={styles.contenedorModal}>
               {/* Eleccion del jugador humano */}
               <div className={styles.centroColumna}>
                 {eleccionJugador === 'piedra' && <Image src={piedra} className={styles.imagenesModal} priority />}
@@ -148,16 +140,15 @@ export default function Home() {
                 {eleccionBot === 'tijeras' && <Image src={tijeras} className={styles.imagenesModal} priority />}
                 <p className={styles.texto}>{eleccionBot}</p>
               </div>
-
             </div>
+          ) : (
             //Despues de 1 segundo se muestra el resultado en texto
-            : <div>
+            <div>
               <span className={styles.resultados}>{resultado}</span>
             </div>
-          }
+          )}
         </Modal>
       )}
-
     </main>
-  )
+  );
 }
