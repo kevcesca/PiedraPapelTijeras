@@ -3,11 +3,10 @@ import React, { useState } from 'react';
 import Modal from "./components/Modal/Modal";
 import Image from 'next/image';
 import styles from './page.module.css';
-import { Card, Grid } from '@mui/material';
+import { Grid } from '@mui/material';
 import piedra from './punio.png';
 import tijeras from './tijeras.png';
 import papel from './manita.png';
-import { disable } from 'colors';
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
@@ -98,19 +97,19 @@ export default function Home() {
           <br></br>
           <br></br>
           <div className={styles.centroColumna}>
-            <button onClick={disable} className={styles.imagenes}>
+            <button className={styles.imagenes}>
               <Image
                 src={papel}
                 priority
               />
             </button>
-            <button onClick={disable} className={styles.imagenes}>
+            <button className={styles.imagenes}>
               <Image
                 src={piedra}
                 priority
               />
             </button>
-            <button onClick={disable} className={styles.imagenes}>
+            <button className={styles.imagenes}>
               <Image
                 src={tijeras}
                 priority
