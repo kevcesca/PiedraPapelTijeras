@@ -20,7 +20,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column !important;
   padding-right: 24rem;
   border: 0px;
   border-right: 2px;
@@ -32,7 +32,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column !important;
   padding-left: 24rem;
   border: 0px;
   border-left: 2px;
